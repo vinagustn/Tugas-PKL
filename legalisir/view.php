@@ -33,6 +33,31 @@
     </div>
   </nav>
 
+  <div class="row mx-3 my-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="text-center">
+          <th scope="col" rowspan="2">No</th>
+          <th scope="col" rowspan="2">Tanggal</th>
+          <th scope="col" rowspan="2">No. Registrasi</th>
+          <th scope="col" rowspan="2">Nama Pemohon</th>
+          <th scope="col" colspan="5">Dokumen</th>
+          <th scope="col" rowspan="2">Keterangan</th>
+        </tr>
+        <tr class="text-center">
+          <th scope="col">KTP</th>
+          <th scope="col">KK</th>
+          <th scope="col">A.Kel</th>
+          <th scope="col">A.Kem</th>
+          <th scope="col">A.Kawin</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

@@ -54,25 +54,34 @@
       <div class="input-group-text" style="width: 250px">
         <input class="form-check-input mt-0 me-2" type="checkbox" value="Kartu Tanda Penduduk (KTP)">Kartu Tanda Penduduk (KTP)
       </div>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" placeholder="0">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-text" style="width: 250px">
         <input class="form-check-input mt-0 me-2" type="checkbox" value="Kartu Keluarga (KK)">Kartu Keluarga (KK)
       </div>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" placeholder="0">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-text" style="width: 250px">
         <input class="form-check-input mt-0 me-2" type="checkbox" value="Akta Kelahiran">Akta Kelahiran    
       </div>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" placeholder="0">
+      <input type="text" class="form-control" placeholder="3333-LU-010101-0001">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-text" style="width: 250px">
         <input class="form-check-input mt-0 me-2" type="checkbox" value="Akta Kematian">Akta Kematian
       </div>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" placeholder="0">
+      <input type="text" class="form-control" placeholder="3333-KM-010101-0001">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-text" style="width: 250px">
+        <input class="form-check-input mt-0 me-2" type="checkbox" value="Akta Perkawinan">Akta Perkawinan
+      </div>
+      <input type="text" class="form-control" placeholder="0">
+      <input type="text" class="form-control" placeholder="3333-KW-010101-0001">
     </div>
     <div class="d-grip mb-4 position-relative">
       <button type="submit" class="btn btn-primary position-absolute end-0" style="width: 150px">Input Data</button>
