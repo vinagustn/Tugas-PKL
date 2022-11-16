@@ -1,3 +1,33 @@
+<?php //
+//
+//  include 'config.php';
+//
+//  //menjalankan session
+//  session_start();
+//
+//
+//  if (isset($_SESSION["login"])) {
+//      header("location: login.php");
+//      exit;
+//  }
+//
+//  if (isset($_POST['login'])) {
+//      $userEmail = $_POST['userEmail'];
+//      $userPass = $_POST['userPass'];
+//
+//      $sql = "SELECT * FROM users WHERE email='$userEmail' AND password='$userPass'";
+//      $result = mysqli_query($koneksi, $sql);
+//      if (mysqli_num_rows($result) > 0) {
+//          echo "
+//            <script>document.location.href = 'legalisir/index.php'</script>
+//          ";
+//      } else {
+//          echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+//      }
+//  }
+//
+//?>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,19 +37,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar-brand p-2" style="background-color:#D2BC9A">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="/img/capil.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center" style="font-family: Inter">
-            Selamat Datang di Sistem Informasi Dindukcapil Kab. Banyumas
-          </a>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg"  style="background-color: #8BC34A">
+    <div class="container-fluid position-relative">
+        <a class="navbar-brand" href="#" style="font-family: 'Goudy Old Style'; font-weight: bold; font-size: x-large">
+            <img src="/img/capil.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center me-2">
+            SISTEM INFORMASI LEGALISIR DAN KERJASAMA (SILEKER) DINDUKCAPIL KAB. BANYUMAS
+        </a>
+    </div>
+</nav>
+
     <section class="vh-50">
         <div class="container h-100 py-4">
           <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-7 col-lg-5 col-xl-5 py-5 rounded-4" style="background-color: #D9D9D9">
-              <form>
+              <form method="POST">
                 <div class="divider d-flex align-items-center my-4">
                     <h2 class="text-center fw-bold mx-0 mb-0">MASUK</h2>
                 </div>
@@ -27,18 +58,18 @@
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form1Example13">Email</label>
-                  <input type="email" id="form1Example13" class="form-control form-control-lg" />
+                  <input type="email" name="userEmail" id="form1Example13" class="form-control form-control-lg" />
                 </div>
       
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form1Example23">Password</label>
-                  <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                  <input type="password" name="userPass" id="form1Example23" class="form-control form-control-lg" />
                 </div>
 
                 <!-- Submit button -->
                 <div class="d-grid mx-auto">
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary" name="login">Login</button>
                 </div>
               </form>
             </div>
