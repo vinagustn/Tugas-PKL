@@ -1,3 +1,21 @@
+<?php
+
+    include '../config.php';
+
+    $cari = null;
+
+    if (isset($_GET['cari'])){
+        $cari = $_GET['cari'];
+        if($cari == null){
+            $show = query("SELECT * FROM legalisir");
+        }else
+            $show = query("SELECT * FROM legalisir WHERE nik = '$cari'");
+    }else{
+        $show = query("SELECT * FROM legalisir");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +30,7 @@
         <div class="container-fluid justify-content-md-end">
             <a class="navbar-brand" href="#" style="font-family: 'Goudy Old Style'; font-weight: bold; font-size: x-large">
                 <img src="/img/capil.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center me-2">
-                SILEKER BANYUMAS
+                SILEGAL BANYUMAS
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,11 +44,11 @@
                         <a class="nav-link" aria-current="page" href="/legalisir/view.php" style="color: black; background-color: #F0F4C3">View</a>
                     </li>
                 </ul>
-                <form class="d-flex ms-3 my-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex ms-3 my-3" role="search" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search  by NIK" aria-label="Search" name="cari" value="<?php echo $cari; ?>">
                     <button class="btn btn-outline-success me-3" type="submit">Search</button>
                 </form>
-                <button type="button" class="btn btn-danger me-3 position-relative">
+                <button type="button" class="btn btn-danger me-3 position-relative" onclick="location.href = '../logout.php'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
                         <path d="M7.5 1v7h1V1h-1z"/>
                         <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
@@ -40,16 +58,18 @@
         </div>
     </nav>
 
-  <div class="table-responsive mx-3 my-5" style="table-border-color-dark: black">
+  <div class="table-responsive mx-5 my-5" style="table-border-color-dark: black">
     <table class="table table-bordered table-hover">
       <thead style="background-color: #A5D6A7">
         <tr class="text-center">
           <th scope="col" rowspan="2" class="align-middle">No</th>
           <th scope="col" rowspan="2" class="align-middle">Tanggal</th>
           <th scope="col" rowspan="2" class="align-middle">No. Registrasi</th>
+          <th scope="col" rowspan="2" class="align-middle">NIK Pemohon</th>
           <th scope="col" rowspan="2" class="align-middle">Nama Pemohon</th>
           <th scope="col" colspan="5">Dokumen</th>
           <th scope="col" rowspan="2" class="align-middle">Keterangan</th>
+          <th scope="col" rowspan="2" class="align-middle">Action</th>
         </tr>
         <tr class="text-center">
           <th scope="col">KTP</th>
@@ -60,7 +80,24 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
-
+        <?php $i = 1; ?>
+        <?php foreach ($show as $row): ?>
+        <tr>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $row['tanggal']; ?></td>
+            <td><?php echo $row['no_registrasi']; ?></td>
+            <td><?php echo $row['nik']; ?></td>
+            <td><?php echo $row['nama_pemohon']; ?></td>
+            <td><?php echo $row['ktp']; ?></td>
+            <td><?php echo $row['kk']; ?></td>
+            <td><?php echo $row['akel']; ?></td>
+            <td><?php echo $row['akem']; ?></td>
+            <td><?php echo $row['akawin']; ?></td>
+            <td><?php echo $row['keterangan']; ?></td>
+            <td><a href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
+        </tr>
+            <?php $i++; ?>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>
