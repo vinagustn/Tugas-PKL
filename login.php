@@ -1,25 +1,33 @@
 <?php
+    session_start();
+
     include 'config.php';
 
-    if (isset($_POST['login'])){
-        $userEmail = $_POST['uEmail'];
-        $userPass = $_POST['uPassword'];
+    $connect = mysqli_connect('localhost','root','','rekap_data');
 
-        $result = query("SELECT * FROM users WHERE email = '$userEmail' AND password = '$userPass'");
+    if (isset($_POST["login"])) {
 
-        if($result > 0 ){
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+
+        $result = mysqli_query($connect, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+        $check = mysqli_num_rows($result);
+
+        if ($check > 0) {
             echo "
-                <script>
-                    alert('Login Succes as Legalisir Admin');
-                    document.location.href = '/legalisir/index.php';
-                </script>
-            ";
+                    <script>
+                        alert('Login Berhasil');
+                        document.location.href = 'legalisir/index.php';
+                    </script>
+                ";
         }else{
             echo "
-                <script>
-                    alert('Your Email or Password was wrong');
-                </script>
-            ";
+                    <script>
+                        alert('Username atau Password Salah');
+                        document.location.href = 'login.php';
+                    </script>
+                ";
         }
     }
 ?>
@@ -46,7 +54,7 @@
         <div class="container h-100 py-4">
           <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-7 col-lg-5 col-xl-5 py-5 rounded-4" style="background-color: #D9D9D9">
-              <form method="POST">
+              <form action="" method="post">
                 <div class="divider d-flex align-items-center my-4">
                     <h2 class="text-center fw-bold mx-0 mb-0">MASUK</h2>
                 </div>
@@ -54,13 +62,13 @@
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form1Example13">Email</label>
-                  <input type="email" name="uEmail" id="form1Example13" class="form-control form-control-lg" />
+                  <input type="email" name="email" id="form1Example13" class="form-control form-control-lg" />
                 </div>
       
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form1Example23">Password</label>
-                  <input type="password" name="uPassword" id="form1Example23" class="form-control form-control-lg" />
+                  <input type="password" name="password" id="form1Example23" class="form-control form-control-lg" />
                 </div>
 
                 <!-- Submit button -->

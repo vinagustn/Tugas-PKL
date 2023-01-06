@@ -90,9 +90,9 @@
             <td><?php echo $row['nama_pemohon']; ?></td>
             <td><?php echo $row['ktp']; ?></td>
             <td><?php echo $row['kk']; ?></td>
-            <td><?php echo $row['akel']; ?></td>
-            <td><?php echo $row['akem']; ?></td>
-            <td><?php echo $row['akawin']; ?></td>
+            <td><?php echo $row['akte_kelahiran']; ?></td>
+            <td><?php echo $row['akte_kematian']; ?></td>
+            <td><?php echo $row['akte_kawin']; ?></td>
             <td><?php echo $row['keterangan']; ?></td>
             <td><a href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
         </tr>

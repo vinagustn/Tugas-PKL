@@ -90,15 +90,15 @@
       </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1" style="width: 220px">Akte Kelahiran</span>
-          <input type="text" class="form-control" placeholder="1" name="akel">
+          <input type="text" class="form-control" placeholder="1" name="akte_kelahiran">
       </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1" style="width: 220px">Akte Kematian</span>
-          <input type="text" class="form-control" placeholder="1" name="akem">
+          <input type="text" class="form-control" placeholder="1" name="akte_kematian">
       </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1" style="width: 220px">Akte Perkawinan</span>
-          <input type="text" class="form-control" placeholder="1" name="akawin">
+          <input type="text" class="form-control" placeholder="1" name="akte_kawin">
       </div>
       <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Keterangan</label>

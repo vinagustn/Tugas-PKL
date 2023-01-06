@@ -24,12 +24,12 @@
         $nama_pemohon = htmlspecialchars($data['nama_pemohon']);
         $ktp = htmlspecialchars($data['ktp']);
         $kk = htmlspecialchars($data['kk']);
-        $akel = htmlspecialchars($data['akel']);
-        $akem = htmlspecialchars($data['akem']);
-        $akawin = htmlspecialchars($data['akawin']);
+        $akte_kelahiran = htmlspecialchars($data['akte_kelahiran']);
+        $akte_kematian = htmlspecialchars($data['akte_kematian']);
+        $akte_kawin = htmlspecialchars($data['akte_kawin']);
         $keterangan = htmlspecialchars($data['keterangan']);
 
-        $saving ="INSERT INTO legalisir VALUES ('','$tanggal','$no_registrasi',$nik,'$nama_pemohon','$ktp','$kk','$akel','$akem','$akawin','$keterangan')";
+        $saving ="INSERT INTO legalisir VALUES ('','$tanggal','$no_registrasi',$nik,'$nama_pemohon','$ktp','$kk','$akte_kelahiran','$akte_kematian','$akte_kawin','$keterangan')";
 
         mysqli_query($connect, $saving);
 
@@ -48,9 +48,9 @@
         $nama_pemohon = htmlspecialchars($data['nama_pemohon']);
         $ktp = htmlspecialchars($data['ktp']);
         $kk = htmlspecialchars($data['kk']);
-        $akel = htmlspecialchars($data['akel']);
-        $akem = htmlspecialchars($data['akem']);
-        $akawin = htmlspecialchars($data['akawin']);
+        $akte_kelahiran = htmlspecialchars($data['akte_kelahiran']);
+        $akte_kematian = htmlspecialchars($data['akte_kematian']);
+        $akte_kawin = htmlspecialchars($data['akte_kawin']);
         $keterangan = htmlspecialchars($data['keterangan']);
 
         $editing = "UPDATE legalisir SET 
@@ -60,9 +60,9 @@
                          nama_pemohon = '$nama_pemohon',
                          ktp = $ktp,
                          kk = '$kk',
-                         akel = '$akel',
-                         akem = '$akem',
-                         akawin = '$akawin',
+                         akte_kelahiran = '$akte_kelahiran',
+                         akte_kematian = '$akte_kematian',
+                         akte_kawin = '$akte_kawin',
                          keterangan = '$keterangan'
                     WHERE id = '$id'";
 
